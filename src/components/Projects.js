@@ -28,7 +28,7 @@ class Projects extends Component {
 
     const projects = data.map((item) => {
       return (
-        <div key={item.data} className={`column is-2 ${item.type}`}>
+        <div key={item.data} className="column is-2">
           <div className="column-wrapper">
             <figure className="image">
               <img src={item.img} alt={item.description} />
@@ -49,7 +49,7 @@ class Projects extends Component {
     return (
       <>
         <main className="section">
-          <div className="container">
+          <div className="container container-isflex">
             <div className="level">
               <div className="level-left">
                 <h2 className="title is-1">Projects</h2>
