@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 class Project extends Component {
   constructor(props) {
@@ -23,10 +23,11 @@ class Project extends Component {
             type: type,
           });
         }
-        return 0;
+        return null;
       }
     );
   }
+
   render() {
     const {
       title,
@@ -47,10 +48,11 @@ class Project extends Component {
         );
       });
     }
+
     return (
       <>
         <Helmet>
-          <title>{`Joe Cox | ${title} - Project`}</title>
+          <title>{`Joe Cox | ${title} - Project - ${description}`}</title>
         </Helmet>
         <section className="section page">
           <div className="container">
@@ -58,6 +60,7 @@ class Project extends Component {
               <div className="level-left">
                 <div className="pageinfo">
                   <h2 className="title is-1">{title}</h2>
+                  <h1 className="subtitle is-5">{description}</h1>
                 </div>
               </div>
               <div className="level-right">

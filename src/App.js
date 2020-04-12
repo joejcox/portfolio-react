@@ -3,6 +3,7 @@ import "./App.scss";
 import Home from "./components/Home";
 import Projects from "./components/Projects";
 import Project from "./components/Project";
+import { HelmetProvider } from "react-helmet-async";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 class App extends Component {
@@ -10,20 +11,20 @@ class App extends Component {
     projects: [
       {
         title: "Noita",
-        description: "Noita is a video game",
+        description: "Video game website",
         information:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in sem vel urna pretium congue ut at lectus. Maecenas vel lorem ipsum. Nunc id tellus gravida, vestibulum nisl pretium, facilisis nulla. Proin porta quis erat ut interdum. Quisque sollicitudin felis et sollicitudin varius. Praesent placerat magna maximus malesuada ullamcorper. Pellentesque in tempus felis. Aenean nec tellus interdum, molestie est a, convallis magna. Cras cursus enim id felis eleifend, non vehicula neque pharetra. Etiam pharetra sollicitudin tortor, aliquet efficitur nunc mattis ut.",
         img:
           "https://cdn.vox-cdn.com/thumbor/u934XKA55y3AYAcyITr7dQCq5GU=/0x0:1920x1080/1200x800/filters:focal(807x387:1113x693)/cdn.vox-cdn.com/uploads/chorus_image/image/59121631/noita2.0.jpg",
         link: "http://www.coejox.com/portfolio/noita",
         github: "http://www.github.com",
-        type: ["Bootstrap", "Vanillajs"],
+        type: ["Bootstrap", "Vanilla JS"],
         data: "noita",
         name: "Noita",
       },
       {
-        title: "LoL Champion Rotation",
-        description: "League of Legends latest champion rotation information",
+        title: "LoL Stats",
+        description: "League of Legends statistics",
         information:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in sem vel urna pretium congue ut at lectus. Maecenas vel lorem ipsum. Nunc id tellus gravida, vestibulum nisl pretium, facilisis nulla. Proin porta quis erat ut interdum. Quisque sollicitudin felis et sollicitudin varius. Praesent placerat magna maximus malesuada ullamcorper. Pellentesque in tempus felis. Aenean nec tellus interdum, molestie est a, convallis magna. Cras cursus enim id felis eleifend, non vehicula neque pharetra. Etiam pharetra sollicitudin tortor, aliquet efficitur nunc mattis ut.",
         img: "https://cdn.mos.cms.futurecdn.net/G2VQ2CL9j4w6Jv5z3QwjuN.jpg",
@@ -35,7 +36,7 @@ class App extends Component {
       },
       {
         title: "Weathered",
-        description: "A weather app",
+        description: "Weather application",
         information:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in sem vel urna pretium congue ut at lectus. Maecenas vel lorem ipsum. Nunc id tellus gravida, vestibulum nisl pretium, facilisis nulla. Proin porta quis erat ut interdum. Quisque sollicitudin felis et sollicitudin varius. Praesent placerat magna maximus malesuada ullamcorper. Pellentesque in tempus felis. Aenean nec tellus interdum, molestie est a, convallis magna. Cras cursus enim id felis eleifend, non vehicula neque pharetra. Etiam pharetra sollicitudin tortor, aliquet efficitur nunc mattis ut.",
         img:
@@ -47,7 +48,7 @@ class App extends Component {
       },
       {
         title: "RGB Slider",
-        description: "A weather app",
+        description: "RGB colour code generator",
         information:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in sem vel urna pretium congue ut at lectus. Maecenas vel lorem ipsum. Nunc id tellus gravida, vestibulum nisl pretium, facilisis nulla. Proin porta quis erat ut interdum. Quisque sollicitudin felis et sollicitudin varius. Praesent placerat magna maximus malesuada ullamcorper. Pellentesque in tempus felis. Aenean nec tellus interdum, molestie est a, convallis magna. Cras cursus enim id felis eleifend, non vehicula neque pharetra. Etiam pharetra sollicitudin tortor, aliquet efficitur nunc mattis ut.",
         img: "https://miro.medium.com/max/1600/1*v7w3v2gsZbSUc7eQFZ_H4g.jpeg",
@@ -58,8 +59,8 @@ class App extends Component {
         name: "RGB-Colour-Slider",
       },
       {
-        title: "React Calculator",
-        description: "A weather app",
+        title: "Calculator",
+        description: "React calculator",
         information:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in sem vel urna pretium congue ut at lectus. Maecenas vel lorem ipsum. Nunc id tellus gravida, vestibulum nisl pretium, facilisis nulla. Proin porta quis erat ut interdum. Quisque sollicitudin felis et sollicitudin varius. Praesent placerat magna maximus malesuada ullamcorper. Pellentesque in tempus felis. Aenean nec tellus interdum, molestie est a, convallis magna. Cras cursus enim id felis eleifend, non vehicula neque pharetra. Etiam pharetra sollicitudin tortor, aliquet efficitur nunc mattis ut.",
         img:
@@ -71,8 +72,8 @@ class App extends Component {
         name: "React-Calculator",
       },
       {
-        title: "Estate Agents",
-        description: "Estate Agent Site",
+        title: "Peter Parker",
+        description: "Estate agent website",
         information:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in sem vel urna pretium congue ut at lectus. Maecenas vel lorem ipsum. Nunc id tellus gravida, vestibulum nisl pretium, facilisis nulla. Proin porta quis erat ut interdum. Quisque sollicitudin felis et sollicitudin varius. Praesent placerat magna maximus malesuada ullamcorper. Pellentesque in tempus felis. Aenean nec tellus interdum, molestie est a, convallis magna. Cras cursus enim id felis eleifend, non vehicula neque pharetra. Etiam pharetra sollicitudin tortor, aliquet efficitur nunc mattis ut.",
         img:
@@ -80,8 +81,8 @@ class App extends Component {
         link: "#",
         github: "http://github.com",
         type: ["API"],
-        data: "estateagents",
-        name: "Estate-Agents",
+        data: "peterparker",
+        name: "Peter-Parker",
       },
     ],
   };
@@ -89,22 +90,25 @@ class App extends Component {
   render() {
     const { projects } = this.state;
     return (
-      <div className="wrapper">
-        <Router>
-          <Switch>
-            <Route exact path="/" render={(props) => <Home {...props} />} />
-            <Route
-              exact
-              path="/projects"
-              render={(props) => <Projects {...props} data={projects} />}
-            />
-            <Route
-              path="/projects/:ProjectId"
-              render={(props) => <Project {...props} data={projects} />}
-            />
-          </Switch>
-        </Router>
-      </div>
+      <HelmetProvider>
+        <div className="wrapper">
+          <Router>
+            <Switch>
+              <Route exact path="/" render={(props) => <Home {...props} />} />
+              <Route
+                exact
+                path="/projects"
+                render={(props) => <Projects {...props} data={projects} />}
+              />
+              <Route
+                exact
+                path="/projects/:ProjectId"
+                render={(props) => <Project {...props} data={projects} />}
+              />
+            </Switch>
+          </Router>
+        </div>
+      </HelmetProvider>
     );
   }
 }

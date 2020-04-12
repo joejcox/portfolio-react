@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import gsap from "gsap";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 class Projects extends Component {
   constructor(props) {
@@ -27,20 +27,20 @@ class Projects extends Component {
   render() {
     const { data } = this.props;
 
-    const projects = data.map((item) => {
+    const projects = data.map(({ data, img, description, name, title }) => {
       return (
-        <div key={item.data} className="column is-2">
+        <div key={data} className="column">
           <div className="column-wrapper">
             <figure className="image">
-              <img src={item.img} alt={item.description} />
+              <img src={img} alt={description} />
             </figure>
             <Link
-              to={`/projects/${item.name}`}
+              to={`/projects/${name}`}
               className="overlay-link"
-              data-page={item.data}
+              data-page={data}
             >
               <div className="card-content is-overlay">
-                <p className="button is-primary view-project">{item.title}</p>
+                <p className="button is-primary view-project">{title}</p>
               </div>
             </Link>
           </div>
@@ -57,7 +57,10 @@ class Projects extends Component {
           <div className="container container-isflex">
             <div className="level">
               <div className="level-left">
-                <h2 className="title is-1">Projects</h2>
+                <div className="pageinfo">
+                  <h2 className="title is-1">Projects</h2>
+                  <h1 className="subtitle is-5">Frontend Web Development</h1>
+                </div>
               </div>
               <div className="level-right">
                 <div className="buttons is-grouped">
@@ -75,7 +78,7 @@ class Projects extends Component {
               </div>
             </div>
             <hr />
-            <div className="projects columns is-multiline">{projects}</div>
+            <div className="projects columns">{projects}</div>
           </div>
         </main>
       </>
