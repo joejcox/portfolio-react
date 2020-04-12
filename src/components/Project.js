@@ -47,7 +47,7 @@ class Project extends Component {
       });
     }
     return (
-      <section className="section">
+      <section className="section page">
         <div className="container">
           <div className="level">
             <div className="level-left">

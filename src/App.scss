@@ -243,25 +243,7 @@ main {
 }
 
 .page {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: white;
-  z-index: 999;
-  transition: 0.4s ease-in-out;
-  opacity: 0;
-  pointer-events: none;
-  overflow-y: scroll;
-  transform: translateY(20px);
-
-  &.show {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translate(0);
-  }
-
+  height: 100%;
   .tag {
     border-radius: 0;
   }
