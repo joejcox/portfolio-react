@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import gsap from "gsap";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 class Home extends Component {
   constructor(props) {
@@ -28,42 +29,48 @@ class Home extends Component {
   }
   render() {
     return (
-      <header className="hero is-fullheight">
-        <div className="hero-body has-text-centered">
-          <div className="container">
-            <p className="socials buttons is-centered intro">
-              <button className="button is-large">
-                <span className="icon">
-                  <i className="fab fa-github"></i>
-                </span>
-              </button>
-              <button className="button is-large">
-                <span className="icon">
-                  <i className="fab fa-linkedin"></i>
-                </span>
-              </button>
-            </p>
-            <div className="siteinfo">
-              <h1 className="title has-text-white intro">JOE COX</h1>
-              <h2 className="subtitle is-3 has-text-white intro">
-                frontend web developer
-              </h2>
-            </div>
-            <div className="ctas buttons is-centered">
-              <Link className="button is-primary orange intro" to="/projects">
-                View Work
-              </Link>
-              <a
-                className="button is-outlined intro"
-                id="get-in-touch"
-                href="mailto:joecoxwebdev@outlook.co.uk">
-                Get In Touch
-              </a>
+      <>
+        <Helmet>
+          <title>{`Joe Cox - Frontend Web Developer`}</title>
+        </Helmet>
+        <header className="hero is-fullheight">
+          <div className="hero-body has-text-centered">
+            <div className="container">
+              <p className="socials buttons is-centered intro">
+                <button className="button is-large">
+                  <span className="icon">
+                    <i className="fab fa-github"></i>
+                  </span>
+                </button>
+                <button className="button is-large">
+                  <span className="icon">
+                    <i className="fab fa-linkedin"></i>
+                  </span>
+                </button>
+              </p>
+              <div className="siteinfo">
+                <h1 className="title has-text-white intro">JOE COX</h1>
+                <h2 className="subtitle is-3 has-text-white intro">
+                  frontend web developer
+                </h2>
+              </div>
+              <div className="ctas buttons is-centered">
+                <Link className="button is-primary orange intro" to="/projects">
+                  View Work
+                </Link>
+                <a
+                  className="button is-outlined intro"
+                  id="get-in-touch"
+                  href="mailto:joecoxwebdev@outlook.co.uk"
+                >
+                  Get In Touch
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="overlay"></div>
-      </header>
+          <div className="overlay"></div>
+        </header>
+      </>
     );
   }
 }

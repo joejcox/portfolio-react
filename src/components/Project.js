@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Helmet } from "react-helmet";
 
 class Project extends Component {
   constructor(props) {
@@ -47,61 +48,69 @@ class Project extends Component {
       });
     }
     return (
-      <section className="section page">
-        <div className="container">
-          <div className="level">
-            <div className="level-left">
-              <div className="pageinfo">
-                <h2 className="title is-1">{title}</h2>
+      <>
+        <Helmet>
+          <title>{`Joe Cox | ${title} - Project`}</title>
+        </Helmet>
+        <section className="section page">
+          <div className="container">
+            <div className="level">
+              <div className="level-left">
+                <div className="pageinfo">
+                  <h2 className="title is-1">{title}</h2>
+                </div>
+              </div>
+              <div className="level-right">
+                <div className="buttons is-grouped">
+                  <button className="button is-primary orange project-back-btn">
+                    <i className="fa fa-chevron-left"></i>
+                  </button>
+
+                  <a
+                    className="button is-warning has-text-white"
+                    href="mailto:joecoxwebdev@outlook.co.uk"
+                  >
+                    <i className="fa fa-envelope"></i>
+                  </a>
+                </div>
               </div>
             </div>
-            <div className="level-right">
-              <div className="buttons is-grouped">
-                <button className="button is-primary orange project-back-btn">
-                  <i className="fa fa-chevron-left"></i>
-                </button>
+            <hr />
+          </div>
+          <div className="container project-container">
+            <div className="columns">
+              <div className="column is-half">
+                <figure className="image">
+                  <img src={image} alt={description} />
+                </figure>
+              </div>
+              <div className="column is-half">
+                <div className="buttons project-buttons">
+                  <a
+                    href={link}
+                    className="button is-primary orange"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View Site
+                  </a>
+                  <a
+                    href={github}
+                    className="button is-primary"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i className="fab fa-github"></i>View on Github
+                  </a>
+                </div>
 
-                <a
-                  className="button is-warning has-text-white"
-                  href="mailto:joecoxwebdev@outlook.co.uk">
-                  <i className="fa fa-envelope"></i>
-                </a>
+                <div className="tags are-small">{tags}</div>
+                <p className="content is-large">{information}</p>
               </div>
             </div>
           </div>
-          <hr />
-        </div>
-        <div className="container project-container">
-          <div className="columns">
-            <div className="column is-half">
-              <figure className="image">
-                <img src={image} alt={description} />
-              </figure>
-            </div>
-            <div className="column is-half">
-              <div className="buttons project-buttons">
-                <a
-                  href={link}
-                  className="button is-primary orange"
-                  target="_blank"
-                  rel="noopener noreferrer">
-                  View Site
-                </a>
-                <a
-                  href={github}
-                  className="button is-primary"
-                  target="_blank"
-                  rel="noopener noreferrer">
-                  <i className="fab fa-github"></i>View on Github
-                </a>
-              </div>
-
-              <div className="tags are-small">{tags}</div>
-              <p className="content is-large">{information}</p>
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
+      </>
     );
   }
 }

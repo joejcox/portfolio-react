@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import gsap from "gsap";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 class Projects extends Component {
   constructor(props) {
@@ -36,7 +37,8 @@ class Projects extends Component {
             <Link
               to={`/projects/${item.name}`}
               className="overlay-link"
-              data-page={item.data}>
+              data-page={item.data}
+            >
               <div className="card-content is-overlay">
                 <p className="button is-primary view-project">{item.title}</p>
               </div>
@@ -48,6 +50,9 @@ class Projects extends Component {
 
     return (
       <>
+        <Helmet>
+          <title>{`Joe Cox | Projects - Frontend Web Developer`}</title>
+        </Helmet>
         <main className="section">
           <div className="container container-isflex">
             <div className="level">
@@ -62,7 +67,8 @@ class Projects extends Component {
 
                   <a
                     className="button is-warning has-text-white"
-                    href="mailto:joecoxwebdev@outlook.co.uk">
+                    href="mailto:joecoxwebdev@outlook.co.uk"
+                  >
                     <i className="fa fa-envelope"></i>Email Me
                   </a>
                 </div>
