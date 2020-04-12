@@ -69,8 +69,8 @@ class Project extends Component {
               </div>
             </div>
           </div>
+          <hr />
         </div>
-        <hr />
         <div className="container project-container">
           <div className="columns">
             <div className="column is-half">
