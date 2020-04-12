@@ -9,13 +9,18 @@ class Projects extends Component {
   componentDidMount() {
     const tl = gsap.timeline();
     const projects = document.querySelectorAll(".projects .column");
-    tl.fromTo("main", 0.2, { opacity: 0, y: "20" }, { opacity: 1, y: 0 });
+    tl.fromTo(
+      "main",
+      0.6,
+      { opacity: 0, y: "20" },
+      { opacity: 1, y: 0, ease: "Power2.easeOut" }
+    );
     tl.fromTo(
       projects,
       0.8,
       { maxHeight: 0 },
-      { maxHeight: "100%", stagger: 0.2, ease: "Power2.easeInOut" },
-      "-0.2"
+      { maxHeight: "100%", ease: "Power2.easeInOut", stagger: 0.2 },
+      0.2
     );
   }
   render() {
@@ -28,7 +33,10 @@ class Projects extends Component {
             <figure className="image">
               <img src={item.img} alt={item.description} />
             </figure>
-            <Link to="/project" className="overlay-link" data-page={item.data}>
+            <Link
+              to={`/projects/${item.name}`}
+              className="overlay-link"
+              data-page={item.data}>
               <div className="card-content is-overlay">
                 <p className="button is-primary view-project">{item.title}</p>
               </div>
